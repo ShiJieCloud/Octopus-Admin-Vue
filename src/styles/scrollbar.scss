@@ -1,0 +1,26 @@
+/* 在你的SCSS文件中 */
+.scrollbar-custom {
+  /* 滚动条整体样式 */
+  &::-webkit-scrollbar {
+    width: 12px; /* 定义滚动条的宽度 */
+    height: 12px; /* 定义水平滚动条的高度 */
+  }
+
+  /* 滚动条滑块（控制条） */
+  &::-webkit-scrollbar-thumb {
+    background-color: #4caf50; /* 滑块颜色 */
+    border-radius: 10px; /* 滑块圆角 */
+    border: 2px solid #f0f0f0; /* 滑块的边框 */
+  }
+
+  /* 滚动条轨道（背景） */
+  &::-webkit-scrollbar-track {
+    background: #f0f0f0; /* 轨道颜色 */
+    border-radius: 10px; /* 轨道圆角 */
+  }
+
+  /* 定义鼠标悬停时滑块的颜色变化 */
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #45a049; /* 悬停时的颜色 */
+  }
+}

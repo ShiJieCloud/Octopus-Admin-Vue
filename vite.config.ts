@@ -31,7 +31,7 @@ export default defineConfig({
       scss: {
         api: 'modern-compiler',
         // 向全局 scss 文件内容注入变量
-        additionalData: '@use "@/assets/styles/variable.scss" as *;'
+        additionalData: '@use "@/styles/variable.scss" as *;'
       }
     }
   }

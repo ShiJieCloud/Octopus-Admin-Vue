@@ -1,5 +1,5 @@
 // 统一导入样式文件
-import './assets/styles/index.scss'
+import '@/styles/main.scss'
 
 import { createApp } from 'vue'
 
