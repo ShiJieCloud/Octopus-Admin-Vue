@@ -87,6 +87,9 @@ export default [
 
       // 限制连续空行的数量，空行最多只能有一行
       'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1, maxBOF: 0 }],
+
+      // 禁用组件名称必须是多词的规则
+      'vue/multi-word-component-names': 'off'
     },
   },
 ]
