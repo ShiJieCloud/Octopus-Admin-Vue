@@ -84,6 +84,9 @@ export default [
 
       // 禁止魔法数字，推荐使用常量或者有意义的命名
       'no-magic-numbers': ['error', { ignore: [0, 1, -1] }],
+
+      // 限制连续空行的数量，空行最多只能有一行
+      'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1, maxBOF: 0 }],
     },
   },
 ]
