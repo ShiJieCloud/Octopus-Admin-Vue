@@ -17,4 +17,13 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+        // 向全局 scss 文件内容注入变量
+        additionalData: '@use "@/assets/styles/variable.scss" as *;'
+      }
+    }
+  }
 })
