@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, defineProps, useAttrs } from 'vue'
+import { computed, useAttrs } from 'vue'
 
 // 定义组件的props
 const props = defineProps({
