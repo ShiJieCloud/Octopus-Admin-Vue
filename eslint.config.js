@@ -91,5 +91,12 @@ export default [
       // 禁用组件名称必须是多词的规则
       'vue/multi-word-component-names': 'off',
     },
+  }  ,
+  {
+    // 针对 constants 目录下文件的规则
+    files: ['**/constants/**'],  // 只针对 constants 目录下的文件
+    rules: {
+      'no-magic-numbers': 'off'  // 禁用 no-magic-numbers 规则
+    }
   },
 ]
