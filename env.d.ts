@@ -8,26 +8,26 @@ declare interface ViteEnv {
   VITE_NODE_ENV: 'development' | 'production' | 'test'
   // 应用标题
   VITE_APP_TITLE: string
+  // 应用信息
+  VITE_APP_DESCRIPTION: string
   // 服务端口
   VITE_SERVER_PORT: number
   // 是否自动在浏览器打开应用
   VITE_SERVER_OPEN: boolean
-  // 是否启用 gzip 压缩
-  VITE_REPORT: boolean
-  // 是否启用 gzip 压缩
-  VITE_BUILD_COMPRESS: 'gzip' | 'brotli' | 'gzip,brotli' | 'none'
-  // 是否删除原始文件
-  VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE: boolean
-  // 是否删除控制台
-  VITE_DROP_CONSOLE: boolean
   // 公共路径
   VITE_BASE_URL: string
   // 全局 API 地址
   VITE_API_URL: string
+  // API 超时时间
+  VITE_API_TIMEOUT: number
+  // 路由模式
+  VITE_ROUTER_MODE: string
+  // UI 默认布局
+  VITE_UI_DEFAULT_LAYOUT: string
+  // UI 默认主题
+  VITE_UI_DEFAULT_THEME: string
   // 代理配置
   VITE_PROXY: [string, string][]
-  // 是否启用图片压缩
-  VITE_USE_IMAGEMIN: boolean
 }
 
 /* 声明对象 __APP_INFO__ 包含应用程序的元数据 */

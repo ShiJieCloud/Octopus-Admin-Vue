@@ -5,7 +5,7 @@ export class AppConfig {
   private static readonly apiUrl: string = import.meta.env.VITE_API_URL || '/'
   private static readonly appTitle: string = import.meta.env.VITE_APP_TITLE || 'Octopus-Admin'
   private static readonly routerMode: RouterMode = import.meta.env.VITE_ROUTER_MODE || RouterMode.Hash
-  private static readonly baseUrl: string = import.meta.env.BASE_URL || '/'
+  private static readonly baseUrl: string = import.meta.env.VITE_BASE_URL || '/'
 
   // 获取配置的 API URL
   public static getApiUrl(): string {
