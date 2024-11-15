@@ -1,4 +1,4 @@
-<script setup lang="ts"></script>
+<script setup lang="ts" name="Layout"></script>
 
 <template>
   <div>Layout</div>
