@@ -8,15 +8,11 @@
 export enum RouterMode {
   /**
    * `Hash` 模式：路由路径以 `#` 开头，如 `example.com/#/home`。
-   * 优点：无需后端支持，易于在浏览器管理。
-   * 缺点：URL 包含 `#`，不够整洁。
    */
   Hash = 'hash',
 
   /**
    * `History` 模式：URL 更简洁，无 `#`，如 `example.com/home`。
-   * 优点：URL 干净，符合传统网页结构。
-   * 缺点：需要后端支持处理路由重定向。
    */
   History = 'history',
 }
