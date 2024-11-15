@@ -1,7 +1,5 @@
-// src/utils/pageTitle.ts
-
 // 获取应用的基础标题（从 .env 文件中获取）
-const title = import.meta.env.VITE_APP_TITLE || 'Vue App'
+const title = import.meta.env.VITE_APP_TITLE || 'Octopus-Admin'
 
 /**
  * 根据页面标题和应用标题拼接新的页面标题
