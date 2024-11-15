@@ -67,8 +67,8 @@ export default [
       'vue/html-quotes': ['error', 'double'],
 
       // TypeScript 特有的规则：
-      // 禁止使用 any 类型，强制使用明确类型
-      '@typescript-eslint/no-explicit-any': 'error',
+      // 可以使用 any 类型
+      '@typescript-eslint/no-explicit-any': 'off',
 
       // 强制函数返回类型和模块边界类型显式声明
       '@typescript-eslint/explicit-module-boundary-types': 'warn',
@@ -84,6 +84,12 @@ export default [
 
       // 禁止魔法数字，推荐使用常量或者有意义的命名
       'no-magic-numbers': ['error', { ignore: [0, 1, -1] }],
+
+      // 限制连续空行的数量，空行最多只能有一行
+      'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1, maxBOF: 0 }],
+
+      // 禁用组件名称必须是多词的规则
+      'vue/multi-word-component-names': 'off',
     },
   },
 ]
