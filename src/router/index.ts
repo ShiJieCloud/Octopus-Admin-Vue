@@ -2,18 +2,15 @@ import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router
 import { staticRoutes } from './modules/staticRoutes'
 
 import getPageTitle from '@/utils/pageTitle'
-import { RouterMode } from '@/constants/RouterMode'
+import { AppConfig } from '@/config/AppConfig'
 
 const routerMode = {
-  history: () => createWebHistory(import.meta.env.BASE_URL),
-  hash: () => createWebHashHistory(import.meta.env.BASE_URL)
+  history: () => createWebHistory(AppConfig.getBaseUrl()),
+  hash: () => createWebHashHistory(AppConfig.getBaseUrl())
 }
 
-// 从环境变量 VITE_ROUTER_MODE 读取路由模式，默认使用 RouterMode.History
-const mode:RouterMode = import.meta.env.VITE_ROUTER_MODE || RouterMode.Hash
-
 const router = createRouter({
-  history: routerMode[mode](),
+  history: routerMode[AppConfig.getRouterMode()](),
   routes: staticRoutes, // 初始路由仅包含静态路由
 })
 

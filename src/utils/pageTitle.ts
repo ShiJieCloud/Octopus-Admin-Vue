@@ -1,5 +1,4 @@
-// 获取应用的基础标题（从 .env 文件中获取）
-const title = import.meta.env.VITE_APP_TITLE || 'Octopus-Admin'
+import { AppConfig } from '@/config/AppConfig'
 
 /**
  * 根据页面标题和应用标题拼接新的页面标题
@@ -8,7 +7,7 @@ const title = import.meta.env.VITE_APP_TITLE || 'Octopus-Admin'
  */
 export default function getPageTitle(pageTitle?: string): string {
   if (pageTitle) {
-    return `${pageTitle} - ${title}`
+    return `${pageTitle} - ${AppConfig.getAppTitle()}`
   }
-  return `${title}`
+  return `${AppConfig.getAppTitle()}`
 }
