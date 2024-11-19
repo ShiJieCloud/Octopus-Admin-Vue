@@ -11,6 +11,7 @@
       "@/*": ["src/*"]                // 设置路径别名，方便引用 src 下的模块
     },
     "types": [
+      "vue",
       "vite/client",                  // 启用 Vite 客户端类型支持
       "element-plus/global"           // 启用 Element Plus 全局类型支持
     ],
