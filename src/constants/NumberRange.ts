@@ -1,7 +1,8 @@
 export enum NumberRange {
-  Zero ,
-  One ,
+  Zero,
+  One,
   Two,
   Twenty = 20,
-  Hundred = 100
+  Twenty_Four = 24,
+  Hundred = 100,
 }
