@@ -1,7 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 
 <template>
-  <router-view />
+  <div class="w-screen h-screen">
+    <el-config-provider size="default">
+      <router-view />
+    </el-config-provider>
+  </div>
+
 </template>
 
 <style scoped></style>
