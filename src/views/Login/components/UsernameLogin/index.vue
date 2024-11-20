@@ -1,7 +1,7 @@
 <script setup lang="ts" name="UsernameLogin"></script>
 
 <template>
-  <div class="w-full max-w-xs md:max-w-sm">
+
     <!-- 表单 -->
     <el-form ref="loginFormRef" label-position="top" label-width="auto" size="large" status-icon>
       <el-form-item prop="username">
@@ -81,7 +81,7 @@
         </el-link>
       </div>
     </div>
-  </div>
+
 </template>
 
 <style scoped></style>

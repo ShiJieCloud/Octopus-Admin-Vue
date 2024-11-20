@@ -1,7 +1,18 @@
 <script setup lang="ts" name="Login">
 import { AppConfig } from '@/config/AppConfig'
 import UsernameLogin from '@/views/Login/components/UsernameLogin/index.vue'
+import { ref, computed } from 'vue'
 
+type LoginMode = 'username'
+
+const loginModeMap = {
+  username: UsernameLogin,
+}
+
+const loginModeKey = ref<LoginMode>('username')
+
+// 使用 computed 动态获取当前组件
+const loginMode = computed(() => loginModeMap[loginModeKey.value])
 </script>
 
 <template>
@@ -17,7 +28,9 @@ import UsernameLogin from '@/views/Login/components/UsernameLogin/index.vue'
       </div>
 
       <!--   登录表单   -->
-      <UsernameLogin />
+      <div class="w-full max-w-xs md:max-w-sm">
+        <component :is="loginMode" />
+      </div>
     </div>
   </div>
 </template>
