@@ -27,11 +27,11 @@ const themeStore = useThemeStore()
         <div class="flex items-center w-full gap-4">
           <el-input placeholder="请输入验证码" class="w-2/3">
             <template #prefix>
-              <SvgIcon iconName="verify-code" iconClass="size-5" />
+              <SvgIcon iconName="captcha" iconClass="size-5" />
             </template>
           </el-input>
-          <div class="w-1/3 bg-gray-300 cursor-pointer">
-            <img src="https://via.placeholder.com" alt="Captcha" class="cursor-pointer" />
+          <div class="w-1/3 h-10 bg-gray-300 cursor-pointer">
+            <el-image fit="contain" class="w-full" src="" alt="Captcha" />
           </div>
         </div>
       </el-form-item>

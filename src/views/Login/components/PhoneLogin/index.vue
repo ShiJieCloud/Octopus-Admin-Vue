@@ -100,7 +100,7 @@ const handleLogin = async (formEl: FormInstance | undefined) => {
       <div class="flex w-full justify-between gap-3">
         <el-input placeholder="短信验证码" maxlength="6" v-model="phoneLoginForm.captcha" class="2/3">
           <template #prefix>
-            <SvgIcon iconName="verify-code" />
+            <SvgIcon iconName="captcha" />
           </template>
         </el-input>
         <el-button

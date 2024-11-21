@@ -1,5 +1,5 @@
 <script setup lang="ts" name="Login">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { AppConfig } from '@/config/AppConfig'
 import UsernameLogin from '@/views/Login/components/UsernameLogin/index.vue'
 import PhoneLogin from '@/views/Login/components/PhoneLogin/index.vue'
@@ -18,6 +18,8 @@ const loginModeMap = {
 
 // 使用 computed 动态获取当前组件
 const loginMode = computed(() => loginModeMap[themeStore.loginMode])
+
+const isHovered = ref(false)
 </script>
 
 <template>
@@ -40,4 +42,5 @@ const loginMode = computed(() => loginModeMap[themeStore.loginMode])
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>
