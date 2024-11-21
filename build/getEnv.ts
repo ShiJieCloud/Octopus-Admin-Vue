@@ -1,3 +1,5 @@
+import { Recordable, ViteEnv } from '../env'
+
 /**
  * 从 Vite 的环境变量对象中读取值并进行类型转换
  * @param envConf 原始环境变量配置对象

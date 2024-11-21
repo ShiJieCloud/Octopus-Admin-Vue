@@ -1,5 +1,7 @@
 /// <reference types="vite/client" />
 // 定义泛型 Recordable，键类型为字符串、值类型为 T
+import { LoginMode } from '@/constants/LoginMode'
+
 declare type Recordable<T = any> = Record<string, T>;
 
 // 定义接口 ViteEnv，描述项目的环境变量结构
@@ -26,6 +28,8 @@ declare interface ViteEnv {
   VITE_UI_DEFAULT_LAYOUT: string
   // UI 默认主题
   VITE_UI_DEFAULT_THEME: string
+  // 默认登录方式
+  VITE_DEFAULT_LOGIN_MODE: LoginMode
   // 代理配置
   VITE_PROXY: [string, string][]
 }

@@ -1,18 +1,22 @@
 <script setup lang="ts" name="Login">
+import { ref, computed } from 'vue'
 import { AppConfig } from '@/config/AppConfig'
 import UsernameLogin from '@/views/Login/components/UsernameLogin/index.vue'
-import { ref, computed } from 'vue'
+import PhoneLogin from '@/views/Login/components/PhoneLogin/index.vue'
+import { LoginMode } from '@/constants/LoginMode'
+import { useThemeStore } from '@/stores/Theme'
 
-type LoginMode = 'username'
+const themeStore = useThemeStore()
 
 const loginModeMap = {
-  username: UsernameLogin,
+  USERNAME: UsernameLogin,
+  PHONE: PhoneLogin,
+  EMAIL: PhoneLogin,
+  QRCODE: PhoneLogin,
 }
 
-const loginModeKey = ref<LoginMode>('username')
-
 // 使用 computed 动态获取当前组件
-const loginMode = computed(() => loginModeMap[loginModeKey.value])
+const loginMode = computed(() => loginModeMap[themeStore.loginMode])
 </script>
 
 <template>
@@ -29,7 +33,7 @@ const loginMode = computed(() => loginModeMap[loginModeKey.value])
 
       <!--   登录表单   -->
       <div class="w-full max-w-xs md:max-w-sm">
-        <component :is="loginMode" />
+        <component v-if="loginMode" :is="loginMode" />
       </div>
     </div>
   </div>

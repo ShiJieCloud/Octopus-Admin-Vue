@@ -1,9 +1,13 @@
-<script setup lang="ts" name="UsernameLogin"></script>
+<script setup lang="ts" name="UsernameLogin">
+import { useThemeStore } from '@/stores/Theme'
+import { LoginMode } from '@/constants/LoginMode'
+
+const themeStore = useThemeStore()
+</script>
 
 <template>
-
     <!-- 表单 -->
-    <el-form ref="loginFormRef" label-position="top" label-width="auto" size="large" status-icon>
+    <el-form ref="loginFormRef" size="large" status-icon>
       <el-form-item prop="username">
         <el-input placeholder="请输入用户名" clearable>
           <template #prefix>
@@ -26,7 +30,7 @@
               <SvgIcon iconName="verify-code" iconClass="size-5" />
             </template>
           </el-input>
-          <div class="w-1/3 min-w-24 bg-gray-300 cursor-pointer">
+          <div class="w-1/3 bg-gray-300 cursor-pointer">
             <img src="https://via.placeholder.com" alt="Captcha" class="cursor-pointer" />
           </div>
         </div>
@@ -44,17 +48,17 @@
         </div>
       </el-form-item>
       <el-form-item>
-        <el-button class="w-full" type="primary"> 登录</el-button>
+        <el-button class="w-full" type="primary"> 登录 </el-button>
         <div class="leading-6 flex w-full justify-between">
-          <el-link type="primary"> 忘记密码?</el-link>
-          <el-link class="text-md" type="primary"> 还没有账号？去注册</el-link>
+          <el-link type="primary"> 忘记密码? </el-link>
+          <el-link class="text-md" type="primary"> 还没有账号？去注册 </el-link>
         </div>
       </el-form-item>
     </el-form>
 
     <div class="hidden md:block">
-      <div class="flex items-center justify-between">
-        <el-button>手机登录</el-button>
+      <div class="flex w-full items-center justify-between">
+        <el-button @click="themeStore.setLoginMode(LoginMode.PHONE)">手机登录</el-button>
         <el-button>二维码登录</el-button>
         <el-button>邮箱登录</el-button>
       </div>

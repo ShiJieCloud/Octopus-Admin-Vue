@@ -8,37 +8,35 @@ const themeStore = useThemeStore()
 const props = defineProps({
   iconName: {
     type: String,
-    required: true
+    required: true,
   },
   iconClass: {
     type: String,
-    default: ''
+    default: '',
   },
   iconSize: {
     type: Number,
-    default: 0
-  }
+    default: 0,
+  },
 })
 
 // 计算图标的实际大小
 const iconName = computed(() => `#icon-${props.iconName}`)
 const svgClass = computed(() => (props.iconClass ? `svg-icon ${props.iconClass}` : 'svg-icon'))
 
-const iconSize = computed(() =>{
-  return  props.iconSize + themeStore.iconSize
+const iconSize = computed(() => {
+  return props.iconSize + themeStore.iconSize
 })
 
-const listeners = useAttrs()
+// 使用 computed 来优化 listeners 过滤逻辑
+const filteredListeners = computed(() => {
+  const listeners = useAttrs()
+  return Object.fromEntries(Object.entries(listeners).filter(([key, value]) => typeof value === 'function'))
+})
 </script>
 
 <template>
-  <svg
-    :class="svgClass"
-    aria-hidden="true"
-    :width="iconSize"
-    :height="iconSize"
-    v-on="listeners"
-  >
+  <svg :class="svgClass" aria-hidden="true" :width="iconSize" :height="iconSize" v-on="filteredListeners">
     <use :xlink:href="iconName" />
   </svg>
 </template>
