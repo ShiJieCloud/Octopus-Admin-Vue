@@ -1,9 +1,9 @@
 <script setup lang="ts" name="Login">
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import { AppConfig } from '@/config/AppConfig'
 import UsernameLogin from '@/views/Login/components/UsernameLogin/index.vue'
 import PhoneLogin from '@/views/Login/components/PhoneLogin/index.vue'
-import { LoginMode } from '@/constants/LoginMode'
+import EmailLogin from '@/views/Login/components/EmailLogin/index.vue'
 import { useThemeStore } from '@/stores/Theme'
 
 const themeStore = useThemeStore()
@@ -11,7 +11,7 @@ const themeStore = useThemeStore()
 const loginModeMap = {
   USERNAME: UsernameLogin,
   PHONE: PhoneLogin,
-  EMAIL: PhoneLogin,
+  EMAIL: EmailLogin,
   QRCODE: PhoneLogin,
 }
 

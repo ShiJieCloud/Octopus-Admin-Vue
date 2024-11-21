@@ -60,7 +60,7 @@ const themeStore = useThemeStore()
       <div class="flex w-full items-center justify-between">
         <el-button @click="themeStore.setLoginMode(LoginMode.PHONE)">手机登录</el-button>
         <el-button>二维码登录</el-button>
-        <el-button>邮箱登录</el-button>
+        <el-button @click="themeStore.setLoginMode(LoginMode.EMAIL)">邮箱登录</el-button>
       </div>
 
       <el-divider>
