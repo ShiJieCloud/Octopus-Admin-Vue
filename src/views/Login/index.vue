@@ -4,6 +4,7 @@ import { AppConfig } from '@/config/AppConfig'
 import UsernameLogin from '@/views/Login/components/UsernameLogin/index.vue'
 import PhoneLogin from '@/views/Login/components/PhoneLogin/index.vue'
 import EmailLogin from '@/views/Login/components/EmailLogin/index.vue'
+import QRCodeLogin from '@/views/Login/components/QRCodeLogin/index.vue'
 import { useThemeStore } from '@/stores/Theme'
 
 const themeStore = useThemeStore()
@@ -12,7 +13,7 @@ const loginModeMap = {
   USERNAME: UsernameLogin,
   PHONE: PhoneLogin,
   EMAIL: EmailLogin,
-  QRCODE: PhoneLogin,
+  QRCODE: QRCodeLogin,
 }
 
 // 使用 computed 动态获取当前组件
