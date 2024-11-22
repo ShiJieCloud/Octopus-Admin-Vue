@@ -25,8 +25,8 @@ const excludedKeepAliveComponents = ['QRCODE']
 
 <template>
   <div class="w-full h-full xl:bg-gray-200 flex justify-center items-center">
-    <div class="w-full xl:w-5/6 h-full xl:h-5/6 xl:rounded-xl xl:drop-shadow-md bg-white flex
-       justify-center items-center transition-all duration-500 ease-in-out"
+    <div class="w-full xl:w-3/4 xl:rounded-md xl:drop-shadow-md bg-white flex
+       justify-center items-center transition-all duration-500 ease-in-out aspect-video"
     >
       <div class="lg:w-1/2 h-full bg-contain bg-center bg-[url('@/assets/images/login.svg')] bg-no-repeat" />
       <div class="w-full lg:w-2/5 h-full flex flex-col items-center justify-center">
