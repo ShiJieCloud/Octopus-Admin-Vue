@@ -19,7 +19,8 @@ const loginModeMap = {
 // 使用 computed 动态获取当前组件
 const loginMode = computed(() => loginModeMap[themeStore.loginMode])
 
-const isHovered = ref(false)
+// 不需要缓存的登录组件
+const excludedKeepAliveComponents = ['QRCODE']
 </script>
 
 <template>
@@ -35,12 +36,46 @@ const isHovered = ref(false)
       </div>
 
       <!--   登录表单   -->
-      <div class="w-full max-w-xs md:max-w-sm">
-        <component v-if="loginMode" :is="loginMode" />
+      <div class="w-full flex items-center justify-center max-w-xs md:max-w-sm">
+        <Transition name="fade">
+          <keep-alive :exclude="excludedKeepAliveComponents">
+            <component :is="loginMode" :key="themeStore.loginMode" />
+          </keep-alive>
+        </Transition>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+/* 定义弹性向上移动的动画 */
+@keyframes slide-up {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 过渡类 */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-leave-active {
+  transition: opacity 0s ease, transform 0s ease;
+}
+
+/* 自定义动画效果 */
+.fade-enter-active {
+  animation: slide-up 0.3s ease forwards;
+}
 </style>

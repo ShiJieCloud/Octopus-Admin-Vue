@@ -32,7 +32,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div>
+  <div class="w-full h-full">
     <el-form
       ref="ruleFormRef"
       size="large"
