@@ -14,3 +14,10 @@ export interface UsernameLoginData {
   captcha: string;
   rememberMe: boolean;
 }
+
+export interface ResetPasswordData {
+  phone: string;
+  captcha: string;
+  password: string;
+  confirmPassword: string;
+}

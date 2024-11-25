@@ -89,7 +89,7 @@ const handleLogin = async (formEl: FormInstance | undefined) => {
       <el-form-item>
         <el-button class="w-full" type="primary" @click="handleLogin(usernameLoginFormRef)"> 登录</el-button>
         <div class="leading-6 flex w-full justify-between">
-          <el-link type="primary"> 忘记密码?</el-link>
+          <el-link type="primary" @click="themeStore.setLoginMode(LoginMode.RESETPASSWORD)"> 忘记密码?</el-link>
           <el-link class="text-md" type="primary" href="/register"> 还没有账号？去注册</el-link>
         </div>
       </el-form-item>

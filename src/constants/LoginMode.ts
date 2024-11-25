@@ -4,4 +4,5 @@ export enum LoginMode {
   PHONE = 'PHONE',
   EMAIL = 'EMAIL',
   QRCODE = 'QRCODE',
+  RESETPASSWORD = 'RESETPASSWORD'
 }

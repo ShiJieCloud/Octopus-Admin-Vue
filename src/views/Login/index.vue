@@ -5,6 +5,7 @@ import UsernameLogin from '@/views/Login/components/UsernameLogin/index.vue'
 import PhoneLogin from '@/views/Login/components/PhoneLogin/index.vue'
 import EmailLogin from '@/views/Login/components/EmailLogin/index.vue'
 import QRCodeLogin from '@/views/Login/components/QRCodeLogin/index.vue'
+import ResetPassword from '@/views/Login/components/ResetPassword/index.vue'
 import { useThemeStore } from '@/stores/Theme'
 
 const themeStore = useThemeStore()
@@ -14,6 +15,7 @@ const loginModeMap = {
   PHONE: PhoneLogin,
   EMAIL: EmailLogin,
   QRCODE: QRCodeLogin,
+  RESETPASSWORD: ResetPassword
 }
 
 // 使用 computed 动态获取当前组件
