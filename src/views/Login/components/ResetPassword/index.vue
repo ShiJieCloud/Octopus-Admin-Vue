@@ -48,6 +48,20 @@ const handleResetPassword = async (formEl: FormInstance | undefined) => {
         <el-button plain> 发送验证码 </el-button>
       </div>
     </el-form-item>
+    <el-form-item prop="password">
+      <el-input placeholder="密码" type="password" v-model="resetPasswordForm.password" show-password clearable>
+        <template #prefix>
+          <SvgIcon iconName="password" />
+        </template>
+      </el-input>
+    </el-form-item>
+    <el-form-item prop="confirmPassword">
+      <el-input placeholder="确认密码" type="password" v-model="resetPasswordForm.confirmPassword" show-password clearable>
+        <template #prefix>
+          <SvgIcon iconName="password" />
+        </template>
+      </el-input>
+    </el-form-item>
     <el-form-item>
       <el-button class="w-full" type="primary" @click="handleResetPassword(resetPasswordFormRef)"> 登录</el-button>
     </el-form-item>
